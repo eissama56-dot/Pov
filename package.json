@@ -1,0 +1,19 @@
+{
+  "name": "pov-server",
+  "version": "1.0.0",
+  "description": "سيرفر بسيط لتطبيق POV: تسجيل دخول + مزامنة بيانات + إشعارات Push حقيقية حتى والتطبيق مقفول",
+  "main": "server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "generate-vapid": "node generate-vapid-keys.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "web-push": "^3.6.7"
+  }
+}
