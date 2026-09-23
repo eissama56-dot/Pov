@@ -9,7 +9,9 @@
 // لو الاستخدام كبر، ابدّل الجزء بتاع db.js بقاعدة بيانات حقيقية
 // (Postgres/Mongo) من غير ما تغيّر شكل الـ endpoints.
 // ============================================================
-const path = require('path');
+console.log('=== POV SERVER STARTING ===');
+console.log('Node:', process.version);
+console.log('PORT:', process.env.PORT);
 const fs = require('fs');
 const crypto = require('crypto');
 const express = require('express');
@@ -186,7 +188,14 @@ app.post('/push/queue', auth, (req, res) => {
   queue[req.userId] = clean;
   persistQueue();
   res.json({ ok: true, count: clean.length });
-});
+  app.listen(PORT, '0.0.0.0', () => {
+  console.log('=== POV SERVER LIVE ===');
+  console.log('PORT:', PORT);
+    app.listen(PORT, '0.0.0.0', () => {
+
+  console.log('=== POV SERVER LIVE ===');
+
+  console.log('PORT:', PORT);
 
 app.listen(PORT, '0.0.0.0', () => {
   console.log('POV server running on port ' + PORT);
