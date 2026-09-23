@@ -188,7 +188,9 @@ app.post('/push/queue', auth, (req, res) => {
   res.json({ ok: true, count: clean.length });
 });
 
-app.listen(PORT, () => console.log('POV server running on port ' + PORT));
+app.listen(PORT, '0.0.0.0', () => {
+  console.log('POV server running on port ' + PORT);
+});
 
 // ---------------- محرك إرسال الإشعارات ----------------
 // كل 30 ثانية: يدور على كل مستخدم عنده عناصر في الطابور معادها استحق، يبعتها بوش، ويشيلها
